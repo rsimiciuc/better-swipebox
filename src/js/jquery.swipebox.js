@@ -993,6 +993,7 @@
 					$this.setSlide( index );
 					$this.preloadMedia( index+1 );
                                         $this.showTopBar();
+                                        $this.setTimeout();
 					if ( plugin.settings.nextSlide ) {
 						plugin.settings.nextSlide(index);
 					}
@@ -1006,6 +1007,7 @@
 						$this.setSlide( index );
 						$this.preloadMedia( index + 1 );
                                                 $this.showTopBar();
+                                                $this.setTimeout();
 						if ( plugin.settings.nextSlide ) {
 							plugin.settings.nextSlide(index);
 						}
@@ -1031,6 +1033,7 @@
 					this.setSlide( index );
 					this.preloadMedia( index-1 );
                                         this.showTopBar();
+                                        this.setTimeout();
 					if ( plugin.settings.prevSlide ) {
 						plugin.settings.prevSlide(index);
 					}
