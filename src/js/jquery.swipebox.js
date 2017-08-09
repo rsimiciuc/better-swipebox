@@ -595,6 +595,18 @@
 				}
 			},
 
+                        showTopBar: function() {
+                            var bars = $( '#swipebox-top-bar' );
+                            if ( this.doCssTrans() ) {
+                                    bars.addClass( 'visible-bars' );
+                            } else {
+                                    $( '#swipebox-top-bar' ).animate( { top : 0 }, 500 );
+                                    setTimeout( function() {
+                                            bars.addClass( 'visible-bars' );
+                                    }, 1000 );
+                            }
+                        },
+
 			/**
 			 * Hide navigation and title bars
 			 */
@@ -980,6 +992,7 @@
 					index++;
 					$this.setSlide( index );
 					$this.preloadMedia( index+1 );
+                                        $this.showTopBar();
 					if ( plugin.settings.nextSlide ) {
 						plugin.settings.nextSlide(index);
 					}
@@ -992,6 +1005,7 @@
 						$this.preloadMedia( index );
 						$this.setSlide( index );
 						$this.preloadMedia( index + 1 );
+                                                $this.showTopBar();
 						if ( plugin.settings.nextSlide ) {
 							plugin.settings.nextSlide(index);
 						}
@@ -1016,6 +1030,7 @@
 					index--;
 					this.setSlide( index );
 					this.preloadMedia( index-1 );
+                                        this.showTopBar();
 					if ( plugin.settings.prevSlide ) {
 						plugin.settings.prevSlide(index);
 					}
